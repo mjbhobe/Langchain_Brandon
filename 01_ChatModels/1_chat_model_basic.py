@@ -1,3 +1,12 @@
+"""
+chat_model_basic.py - basic chat model structure with LangChain
+    & Google Gemini
+
+@Author: Manish Bhobe
+My experiments with AI/Gen AI. Code shared for learning purposes only.
+Use at your own risk!!
+"""
+
 from dotenv import load_dotenv
 from rich.console import Console
 from rich.markdown import Markdown
