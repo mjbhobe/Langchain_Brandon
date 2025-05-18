@@ -53,6 +53,9 @@ while True:
     # pass the entire history to LLM
     response = model.invoke(chat_history)
     chat_history.append(response)
-    print("\r")
     console.print("\r[green]AI response:[/green]")
     console.print(Markdown(response.content))
+
+# finish up by showing the entire chat history
+console.print("[red] ----------- Chat history ----------- [/red]")
+console.print(chat_history)
