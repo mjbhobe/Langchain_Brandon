@@ -43,7 +43,7 @@ def get_model(provider: str):
         model = ChatAnthropic(
             model="claude-3-5-sonnet-20240620",
             temperature=0,
-            max_tokens=None,
+            max_tokens=2048,
             timeout=None,
             max_retries=2,
             # other params...
@@ -64,7 +64,7 @@ def get_model(provider: str):
 
 
 # randomly pick a provider
-provider_index = 2  # random.choice(range(len(SUPPORTED_PROVIDERS)))
+provider_index = random.choice(range(len(SUPPORTED_PROVIDERS)))
 print(f"Randomly chosen provider: {SUPPORTED_PROVIDERS[provider_index]}")
 model = get_model(SUPPORTED_PROVIDERS[provider_index])
 
