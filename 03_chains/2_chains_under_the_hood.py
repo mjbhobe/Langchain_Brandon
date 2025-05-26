@@ -40,9 +40,12 @@ prompt_template = ChatPromptTemplate.from_messages(messages)
 format_prompt = RunnableLambda(lambda x: prompt_template.format_prompt(**x))
 invoke_model = RunnableLambda(lambda x: model.invoke(x.to_messages()))
 parse_output = RunnableLambda(lambda x: x.content)
+upper_case_output = RunnableLambda(lambda x: x.upper())
 
 # and this is what LangChain does under the hood
 # first & last are single items, middle can be a list of items (many items)
-chain = RunnableSequence(first=format_prompt, middle=[invoke_model], last=parse_output)
+chain = RunnableSequence(
+    first=format_prompt, middle=[invoke_model, parse_output], last=upper_case_output
+)
 response = chain.invoke({"topic": "Rahul Gandhi", "joke_count": "3"})
 console.print(f"[green] AI Response [/green]\n {response}")

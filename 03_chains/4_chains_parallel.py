@@ -33,23 +33,73 @@ console = Console()
 messages = [
     (
         "system",
-        "You are an expert product reviewer who can explain features in a simple language "
-        + "and compare features with competing products and give an unbiased comparison.",
+        """
+        You are an expert product reviewer who can explain features in a simple language, 
+        clearly articulating the pros and cons of a product.
+        """,
     ),
     ("human", "List all the main features and standouts of {product}"),
 ]
 prompt_template = ChatPromptTemplate.from_messages(messages)
 
+
+def analyze_pros_prompt(product_features: str):
+    pros_messages = [
+        ("system", "You are an expert product reviewer"),
+        (
+            "human",
+            "Given these product features: {features}, list all the pros of the features. Do not add any additional text or explanations.",
+        ),
+    ]
+    pros_template = ChatPromptTemplate.from_messages(pros_messages)
+    return pros_template.format_prompt(features=product_features)
+
+
+def analyze_cons_prompt(product_features: str):
+    cons_messages = [
+        ("system", "You are an expert product reviewer"),
+        (
+            "human",
+            "Given these product features: {features}, list all the cons of the features. Do not add any additional text or explanations.",
+        ),
+    ]
+    cons_template = ChatPromptTemplate.from_messages(cons_messages)
+    return cons_template.format_prompt(features=product_features)
+
+
 # create our runnable lambdas
-uppercase_output = RunnableLambda(lambda x: x.upper())
-count_words = RunnableLambda(lambda x: f"Word count: {len(x.split())}\n{x}")
+pros_branch_chain = (
+    RunnableLambda(lambda product_features: analyze_pros_prompt(product_features))
+    | model
+    | StrOutputParser()
+)
+
+cons_branch_chain = (
+    RunnableLambda(lambda product_features: analyze_cons_prompt(product_features))
+    | model
+    | StrOutputParser()
+)
+
+
+def combine_pros_and_cons(pros, cons):
+    return f"**Pros:**\n{pros}\n\n**Cons:**\n{cons}"
+
 
 # now build a chain
-chain = prompt_template | model
+chain = (
+    prompt_template
+    | model
+    | StrOutputParser()
+    | RunnableParallel(branches={"pros": pros_branch_chain, "cons": cons_branch_chain})
+    | RunnableLambda(
+        lambda x: combine_pros_and_cons(x["branches"]["pros"], x["branches"]["cons"])
+    )
+)
 # and invoke it
-response = chain.invoke({"product": "iPhone 15"})
+product = "iPhone 15"
+response = chain.invoke({"product": product})
 
 from rich.markdown import Markdown
 
-console.print(f"[green]Chain output:[/green]\n")
-console.print(Markdown(response.content))
+console.print(f"[blue]Here are the pros & cons of **{product}**[/blue]\n")
+console.print(Markdown(response))
