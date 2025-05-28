@@ -28,16 +28,17 @@ class MyRichLogHandler(logging.Handler):
         return super().format(record)
 
 
-def get_logger():
+def get_logger(level=logging.ERROR):
     # Configure logging
     logging.basicConfig(
-        level="NOTSET",
+        level=level,
         format="%(message)s",
         datefmt="[%X]",
         handlers=[MyRichLogHandler()],
     )
 
     logger = logging.getLogger("rich")
+    # logger.setLevel(level)
     return logger
 
 
