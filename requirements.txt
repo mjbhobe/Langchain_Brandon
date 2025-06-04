@@ -5,7 +5,7 @@ google-generativeai
 firestore
 black
 tiktoken
-# chromadb
+chromadb
 sentence-transformers
 bs4
 firecrawl-py

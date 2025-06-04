@@ -41,6 +41,9 @@ logger = get_logger()
 book_path = Path(__file__).parent / "books" / "romeo_and_juliet.txt"
 chromadb_dir = Path(__file__).parent / "chroma_db"
 
+if not chromadb_dir.exists():
+    chromadb_dir.mkdir(parents=True, exist_ok=True)
+
 # check that we have the paths!
 if not book_path.exists():
     raise FileNotFoundError(f"FATAL ERROR: book path '{book_path}' does not exist!")
@@ -120,7 +123,9 @@ console.print("[green]Using recursive char splitting[/green]", end="")
 store_name = "chroma_db_rec_char"
 persistent_dir = chromadb_dir / store_name
 if not persistent_dir.exists():
-    rec_char_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
+    rec_char_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=1000, chunk_overlap=100
+    )
     rec_char_chunks = rec_char_splitter.split_documents(documents)
     create_vector_store(rec_char_chunks, store_name)
 else:
