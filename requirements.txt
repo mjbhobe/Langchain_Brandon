@@ -2,10 +2,12 @@
 openai
 anthropic
 google-generativeai
+
 firestore
 black
 tiktoken
 chromadb
+transformers
 sentence-transformers
 bs4
 firecrawl-py
@@ -36,6 +38,8 @@ langchain-google-firestore
 langchain-anthropic
 # for Groq
 langchain-groq
+# for huggingface
+langchain-huggingface
 
 
 
