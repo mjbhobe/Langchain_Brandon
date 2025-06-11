@@ -66,4 +66,4 @@ agent_executer = AgentExecutor.from_agent_and_tools(
 
 # execute the agents
 response = agent_executer.invoke({"input": "What is the current time?"})
-console.print(f"Response: {response}")
+console.print(f"[green]Response: [/green] {response['output']}")
