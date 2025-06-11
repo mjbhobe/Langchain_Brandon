@@ -21,6 +21,7 @@ beautifulsoup4
 yfinance
 uvicorn
 rich
+tavily-python
 
 # langchain common modules
 langchain
