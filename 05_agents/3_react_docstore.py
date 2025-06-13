@@ -1,6 +1,5 @@
 """
-2_agent_react_chat.py - create a chat application that can query the web with agents
-    We'll be using Tavily search for the web search.
+3_react_docstore.py - chatting with a PDF document
 
 @author: Manish Bhobe
 My experiments with Python, AI/ML and Gen AI.
@@ -12,7 +11,7 @@ from rich.console import Console
 from rich.markdown import Markdown
 
 from langchain import hub
-from langchain.agents import AgentExecutor, create_structured_chat_agent
+from langchain.agents import AgentExecutor, create_react_agent
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langchain.memory import ConversationBufferMemory
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
