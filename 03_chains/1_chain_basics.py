@@ -19,7 +19,7 @@ load_dotenv()
 # create my LLM - using Google Gemini
 model = ChatGoogleGenerativeAI(
     model="gemini-2.0-flash",
-    temperature=0,
+    temperature=0.4,  # I want a creative model :)
     max_tokens=None,
     timeout=None,
     max_retries=2,
