@@ -3,7 +3,7 @@ chat_model_alternatives.py - illustrates use of other LLM providers, such as
     OpenAI ChatGPT or Anthropic Claude. You'll need API keys for both these
     providers.
 
-@Author: Manish Bhobe
+@Author: Manish Bhobé
 My experiments with AI/Gen AI. Code shared for learning purposes only.
 Use at your own risk!!
 """

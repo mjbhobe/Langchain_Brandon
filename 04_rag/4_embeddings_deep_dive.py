@@ -1,7 +1,7 @@
 """
 4_embeddings_deep_dive.py - experiment with varous types of embeddings
 
-@author: Manish Bhobe
+@author: Manish Bhobé
 My experiments with Python, AI/ML and Gen AI.
 Code is shared for learning purposed only - use at own risk!
 """

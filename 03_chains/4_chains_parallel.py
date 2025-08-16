@@ -1,7 +1,7 @@
 """
 chains_parallel.py - run chains in parallel
 
-@Author: Manish Bhobe
+@Author: Manish Bhobé
 My experiments with AI/Gen AI. Code shared for learning purposes only.
 Use at your own risk!!
 """

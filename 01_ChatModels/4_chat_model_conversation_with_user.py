@@ -3,7 +3,7 @@ chat_model_conversation_with_user.py - console based ChatGPT like application
     using chat history, SystemMessage, HumanMessage & AIMessage in Langchain
     & Google Gemini LLM.
 
-@Author: Manish Bhobe
+@Author: Manish Bhobé
 My experiments with AI/Gen AI. Code shared for learning purposes only.
 Use at your own risk!!
 """

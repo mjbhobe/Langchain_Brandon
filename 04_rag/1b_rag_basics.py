@@ -2,7 +2,7 @@
 1b_rag_basics.py - retrieve semantically similar documents from vector store
   NOTE: we do not call LLM yet!
 
-@author: Manish Bhobe
+@author: Manish Bhobé
 My experiments with Python, AI/ML and Gen AI.
 Code is shared for learning purposed only - use at own risk!
 """

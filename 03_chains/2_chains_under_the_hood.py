@@ -2,7 +2,7 @@
 chain_under_the_hood.py - a look at RunnableLambda & RunnableSequence
     to understand how chains work under the hood
 
-@Author: Manish Bhobe
+@Author: Manish Bhobé
 My experiments with AI/Gen AI. Code shared for learning purposes only.
 Use at your own risk!!
 """

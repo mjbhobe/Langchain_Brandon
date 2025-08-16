@@ -3,7 +3,7 @@ chat_model_save_messages_history_firebase.py - console based ChatGPT like applic
     using chat history, SystemMessage, HumanMessage & AIMessage in Langchain
     & Google Gemini LLM. Chat history is saved to Firebase.
 
-@Author: Manish Bhobe
+@Author: Manish Bhobé
 My experiments with AI/Gen AI. Code shared for learning purposes only.
 Use at your own risk!!
 """

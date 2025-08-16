@@ -1,7 +1,7 @@
 """
 chains_branching.py - example of chain branches depending on initial outcome
 
-@Author: Manish Bhobe
+@Author: Manish Bhobé
 My experiments with AI/Gen AI. Code shared for learning purposes only.
 Use at your own risk!!
 """

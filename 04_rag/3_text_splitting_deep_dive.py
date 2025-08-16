@@ -3,7 +3,7 @@
     We'll be using Google embeddings & ChromaDb but various techniques to split 1
     text document. We'll choose (randomly) romeo_and_juliet.txt
 
-@author: Manish Bhobe
+@author: Manish Bhobé
 My experiments with Python, AI/ML and Gen AI.
 Code is shared for learning purposed only - use at own risk!
 """

@@ -2,7 +2,7 @@
 prompt_template_with_chatmodel.py - here we will interface the prompt with a chat model
     (Google Gemini) and get a response.
 
-@Author: Manish Bhobe
+@Author: Manish Bhobé
 My experiments with AI/Gen AI. Code shared for learning purposes only.
 Use at your own risk!!
 """

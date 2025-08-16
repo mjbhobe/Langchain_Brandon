@@ -3,7 +3,7 @@ chat_model_basic_conversation.py - extending the basic Q&A chat model to
     simiulate a conversation with SystemMessage, HumanMessage & AIMessage
     using LangChain & Google Gemini.
 
-@Author: Manish Bhobe
+@Author: Manish Bhobé
 My experiments with AI/Gen AI. Code shared for learning purposes only.
 Use at your own risk!!
 """

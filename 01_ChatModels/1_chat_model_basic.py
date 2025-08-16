@@ -2,7 +2,7 @@
 chat_model_basic.py - basic chat model structure with LangChain
     & Google Gemini
 
-@Author: Manish Bhobe
+@Author: Manish Bhobé
 My experiments with AI/Gen AI. Code shared for learning purposes only.
 Use at your own risk!!
 """
